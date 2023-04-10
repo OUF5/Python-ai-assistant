@@ -52,7 +52,5 @@ jobs:
 #     if: branch==master
 
 notifications:
- recipients:
+ email:
       - mohammed5ibnouf@gmail.com
-    on_success: never # default: change
-    on_failure: always # default: always
