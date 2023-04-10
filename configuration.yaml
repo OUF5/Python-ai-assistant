@@ -1,0 +1,4 @@
+# Example configuration.yaml entry
+sensor:
+  - platform: travisci
+    api_key: xBaOaaoi62_Pbislu5csCA
