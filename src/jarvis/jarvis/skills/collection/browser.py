@@ -84,6 +84,22 @@ class BrowserSkills(AssistantSkill):
                 cls.console(error_log="Error with the execution of skill with message {0}".format(e))
                 cls.response("I can't find what do you want in Youtube..")
 
+                
+    @classmethod #This Code has been added to search for the dr's website of the course
+    def open_dr_website_course_SE489(cls, voice_transcript, skill):
+
+        tags = cls.extract_tags(voice_transcript, skill['tags'])
+        for tag in tags:
+            reg_ex = re.search(tag + ' (.*)', voice_transcript)
+
+            try:
+                if reg_ex:
+                    search_text = reg_ex.group(1)
+                    base = "https://malenezi.github.io/malenezi/SE489/={0}&orderby=viewCount"
+            except Exception as e:
+                cls.console(error_log="Error with the execution of skill with message {0}".format(e))
+                cls.response("I can't find what do you want..")
+
     @classmethod
     def open_website_in_browser(cls, voice_transcript, skill):
         """
@@ -137,6 +153,7 @@ class BrowserSkills(AssistantSkill):
         except Exception as e:
             cls.console(error_log="Error with the execution of skill with message {0}".format(e))
             cls.response("I can't find about daily news..")
+            
 
     @classmethod
     def _decoded_wiki_response(cls, topic):
