@@ -100,6 +100,21 @@ class BrowserSkills(AssistantSkill):
                 cls.console(error_log="Error with the execution of skill with message {0}".format(e))
                 cls.response("I can't find what do you want..")
 
+    @classmethod #This Code has been added to search for the dr's website of the course
+    def Open_PSU_LMS(cls, voice_transcript, skill):
+
+        tags = cls.extract_tags(voice_transcript, skill['tags'])
+        for tag in tags:
+            reg_ex = re.search(tag + ' (.*)', voice_transcript)
+
+            try:
+                if reg_ex:
+                    search_text = reg_ex.group(1)
+                    base = "https://eduhub-lms1.psu.edu.sa/={0}&orderby=viewCount"
+            except Exception as e:
+                cls.console(error_log="Error with the execution of skill with message {0}".format(e))
+                cls.response("I can't find what do you want..")
+
     @classmethod
     def open_website_in_browser(cls, voice_transcript, skill):
         """

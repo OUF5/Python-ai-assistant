@@ -75,6 +75,13 @@ BASIC_SKILLS = [
         'tags': 'open drs website for devops course',
         'description': 'Opens a domain in browser'
     },
+        
+     { # this part has been added for the DevOps course
+        'enable': True,
+        'func': BrowserSkills.Open_PSU_LMS,
+        'tags': 'open the psu lms',
+        'description': 'Opens a domain in browser'
+    },
 
     {
         'enable': True,
