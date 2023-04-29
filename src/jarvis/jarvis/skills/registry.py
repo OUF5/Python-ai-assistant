@@ -71,16 +71,8 @@ BASIC_SKILLS = [
     
      { # this part has been added for the DevOps course
         'enable': True,
-        'func': BrowserSkills.open_dr_website_course_SE489,
-        'tags': 'open drs website for devops course',
-        'description': 'Opens a domain in browser'
-    },
-            
-
-     { # this part has been added for the DevOps course
-        'enable': True,
-        'func': BrowserSkills.open_PSU_LMS,
-        'tags': 'open drs website for devops course',
+        'func': BrowserSkills.open_LMS,
+        'tags': 'open LMS',
         'description': 'Opens a domain in browser'
     },
 
