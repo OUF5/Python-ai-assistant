@@ -100,8 +100,8 @@ class BrowserSkills(AssistantSkill):
                 cls.console(error_log="Error with the execution of skill with message {0}".format(e))
                 cls.response("I can't find what do you want..")
 
-    @classmethod #This Code has been added to search for the dr's website of the course
-    def Open_PSU_LMS(cls, voice_transcript, skill):
+    @classmethod #This Code has been added to search for PSU LMS of the course
+    def open_PSU_LMS(cls, voice_transcript, skill):
 
         tags = cls.extract_tags(voice_transcript, skill['tags'])
         for tag in tags:
